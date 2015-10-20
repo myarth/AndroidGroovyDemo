@@ -8,15 +8,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AbsListView
+import com.alibaba.fastjson.JSON
 import com.arasthel.swissknife.SwissKnife
 import com.arasthel.swissknife.annotations.InjectView
 import com.myth.myarth.gradleapplication.R
-
+import com.myth.myarth.gradleapplication.http.HttpClient
+import com.myth.myarth.gradleapplication.http.HttpResponseHandler
 import com.myth.myarth.gradleapplication.ui.loadmore.LoadMoreListView
 import com.myth.myarth.gradleapplication.ui.quickadapter.BaseAdapterHelper
 import com.myth.myarth.gradleapplication.ui.quickadapter.QuickAdapter
 import com.myth.myarth.gradleapplication.utils.DeviceUtil
 import com.myth.myarth.gradleapplication.utils.UiUtil
+import com.squareup.okhttp.Request
 import com.squareup.picasso.Picasso
 import groovy.transform.CompileStatic
 import in.srain.cube.views.ptr.PtrClassicFrameLayout
@@ -127,6 +130,26 @@ class PageZeroFragment extends Fragment {
             return
         }
         // TODO http request and refresh list
+        HttpClient.get('', [:], new HttpResponseHandler() {
+            @Override
+            void onSuccess(String content) {
+                mPtrFrame.refreshComplete()
+                def list = [] // transform content to list
+                listView.updateLoadMoreViewText(list)
+                isLoadAll = list.size() < HttpClient.PAGE_SIZE
+                if (pno == 1) {
+                    adapter.clear()
+                }
+                adapter.addAll(list)
+                pno++
+            }
+
+            @Override
+            void onFailure(Request request, IOException e) {
+                mPtrFrame.refreshComplete()
+                listView.setLoadMoreViewTextError()
+            }
+        })
     }
 
     @Override
