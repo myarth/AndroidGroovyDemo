@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">GradleApplication</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="no_network_connection_toast">No network connection found</string>
+    <string name="but_home_find">立即找房</string>
+    <string name="appTitle">AndroidGroovy</string>
+
+    <!-- 页面名称 -->
+    <string name="main_navigation_home">首页</string>
+    <string name="main_navigation_im">选房清单</string>
+    <string name="main_navigation_interest">看房日程</string>
+    <string name="main_navigation_user">我的</string>
+    <string name="author_mobile">13141309483</string>
+    <string name="register">注册</string>
+    <string name="login">登录</string>
+    <string name="favorite">我的收藏</string>
+    <string name="adviser">看房顾问</string>
+    <string name="notice">购房须知</string>
+    <string name="settings">设置</string>
+    <string name="login_mobile">手机号</string>
+    <string name="verify_code">验证码</string>
+    <string name="fetch_verify_code">获取验证码</string>
+    <string name="qiaojiangnan">俏江南</string>
+    <string name="address">地址：放假了大解放了看到就阿狸分开多久啊放了多久啊离开封疆大吏减肥大事了,放了多久啊离开封疆大吏减肥大事了</string>
+
+    <string name="progress_loading">加载中，请稍候</string>
+    <string name="progress_load_error">加载失败，点击屏幕刷新</string>
+    <string name="progress_load_no_data">暂无数据</string>
+
+</resources>
