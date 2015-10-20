@@ -113,26 +113,6 @@ class SwissKnifeFragment extends Fragment {
         listView.setLoadMoreViewTextLoading()
 
         // TODO http request and refresh list
-        HttpClient.get('', [:], new HttpResponseHandler() {
-            @Override
-            void onSuccess(String content) {
-                listView.onRefreshComplete()
-                def list = [] // transform content to list
-                listView.updateLoadMoreViewText(list)
-                isLoadAll = list.size() < HttpClient.PAGE_SIZE
-                if (pno == 1) {
-                    adapter.clear()
-                }
-                adapter.addAll(list)
-                pno++
-            }
-
-            @Override
-            void onFailure(Request request, IOException e) {
-                listView.onRefreshComplete()
-                listView.setLoadMoreViewTextError()
-            }
-        })
     }
 
     @Override

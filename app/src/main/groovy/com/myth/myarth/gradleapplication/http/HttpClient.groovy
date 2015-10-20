@@ -59,17 +59,22 @@ public class HttpClient {
         }
         requestBuilder.url(url)
 
-        client.newCall(requestBuilder.build()).enqueue(new Callback() {
-            @Override
-            void onFailure(Request request1, IOException e) {
-                responseHandler.sendFailureMessage(request1, e)
-            }
+        // TODO 处理网络请求框架的异常（url == ''）
+        try {
+            client.newCall(requestBuilder.build()).enqueue(new Callback() {
+                @Override
+                void onFailure(Request request1, IOException e) {
+                    responseHandler.sendFailureMessage(request1, e)
+                }
 
-            @Override
-            void onResponse(Response response) throws IOException {
-                responseHandler.sendSuccessMessage(response)
-            }
-        })
+                @Override
+                void onResponse(Response response) throws IOException {
+                    responseHandler.sendSuccessMessage(response)
+                }
+            })
+        } catch (e) {
+            e.printStackTrace()
+        }
 
     }
 
