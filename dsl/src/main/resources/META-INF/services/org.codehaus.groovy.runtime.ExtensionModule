@@ -1,0 +1,4 @@
+moduleName=myarth-dsl
+moduleVersion=1.0
+extensionClasses=com.myth.myarth.dsl.SimpleDsl
+staticExtensionClasses=

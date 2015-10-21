@@ -6,7 +6,6 @@ import com.myth.myarth.gradleapplication.activity.LoginActivity
 import com.myth.myarth.gradleapplication.activity.MainActivity
 import com.myth.myarth.gradleapplication.common.AppContext
 import groovy.transform.CompileStatic
-import groovy.transform.TypeChecked
 
 @CompileStatic
 class UiUtil {
@@ -35,13 +34,12 @@ class UiUtil {
         Toast.makeText(context, text, duration).show()
     }
 
-    @TypeChecked
     static void showHome(Context context) {
-        context.startActivity(MainActivity, {})
+        context.startActivity(MainActivity)
     }
 
     static void showLogin(Context context) {
-        context.startActivity(LoginActivity, {})
+        context.startActivity(LoginActivity)
     }
 
 }
