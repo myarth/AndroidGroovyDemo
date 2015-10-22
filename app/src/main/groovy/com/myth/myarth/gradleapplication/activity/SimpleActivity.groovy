@@ -14,7 +14,7 @@ import com.myth.myarth.gradleapplication.db.entity.ImUser
 import com.myth.myarth.gradleapplication.http.HttpResponseHandler
 import com.myth.myarth.gradleapplication.http.HttpClient
 import com.myth.myarth.gradleapplication.utils.SharedPreferencesUtil
-import com.myth.myarth.gradleapplication.utils.UiUtil
+import com.myth.myarth.gradleapplication.ui.UiUtil
 import com.squareup.okhttp.Request
 import groovy.transform.CompileStatic
 

@@ -11,7 +11,7 @@ import com.arasthel.swissknife.SwissKnife
 import com.arasthel.swissknife.annotations.InjectView
 import com.myth.myarth.gradleapplication.R
 import com.myth.myarth.gradleapplication.ui.pulltozoomview.PullToZoomScrollViewEx
-import com.myth.myarth.gradleapplication.utils.UiUtil
+import com.myth.myarth.gradleapplication.ui.UiUtil
 import groovy.transform.CompileStatic
 
 @CompileStatic

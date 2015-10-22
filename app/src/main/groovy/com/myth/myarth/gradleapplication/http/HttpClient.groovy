@@ -2,7 +2,7 @@ package com.myth.myarth.gradleapplication.http
 
 import com.myth.myarth.gradleapplication.R
 import com.myth.myarth.gradleapplication.common.Constants
-import com.myth.myarth.gradleapplication.utils.UiUtil
+import com.myth.myarth.gradleapplication.ui.UiUtil
 import com.myth.myarth.gradleapplication.utils.Utils
 import com.squareup.okhttp.*
 import groovy.transform.CompileStatic

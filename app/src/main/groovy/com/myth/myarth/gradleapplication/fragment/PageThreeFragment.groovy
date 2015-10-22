@@ -7,7 +7,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import com.arasthel.swissknife.dsl.components.GAsyncTask
 import com.myth.myarth.gradleapplication.R
-import com.myth.myarth.gradleapplication.utils.UiUtil
+import com.myth.myarth.gradleapplication.ui.UiUtil
 import com.myth.myarth.pulltorefresh.library.PullToRefreshBase
 import com.myth.myarth.pulltorefresh.library.PullToRefreshListFragment
 import com.myth.myarth.pulltorefresh.library.PullToRefreshListView

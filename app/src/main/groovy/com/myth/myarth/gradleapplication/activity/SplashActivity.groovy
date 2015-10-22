@@ -17,7 +17,7 @@ import com.arasthel.swissknife.annotations.OnClick
 import com.myth.myarth.gradleapplication.R
 import com.myth.myarth.gradleapplication.ui.viewpagerindicator.CirclePageIndicator
 import com.myth.myarth.gradleapplication.utils.SharedPreferencesUtil
-import com.myth.myarth.gradleapplication.utils.UiUtil
+import com.myth.myarth.gradleapplication.ui.UiUtil
 import groovy.transform.CompileStatic
 
 @CompileStatic

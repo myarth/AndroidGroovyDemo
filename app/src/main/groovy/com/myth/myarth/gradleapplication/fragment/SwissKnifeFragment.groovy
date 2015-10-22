@@ -12,14 +12,11 @@ import android.widget.ListView
 import com.arasthel.swissknife.SwissKnife
 import com.arasthel.swissknife.annotations.InjectView
 import com.myth.myarth.gradleapplication.R
-import com.myth.myarth.gradleapplication.http.HttpClient
-import com.myth.myarth.gradleapplication.http.HttpResponseHandler
 import com.myth.myarth.gradleapplication.ui.quickadapter.BaseAdapterHelper
 import com.myth.myarth.gradleapplication.ui.quickadapter.QuickAdapter
-import com.myth.myarth.gradleapplication.utils.UiUtil
+import com.myth.myarth.gradleapplication.ui.UiUtil
 import com.myth.myarth.pulltorefresh.library.PullToRefreshBase
 import com.myth.myarth.pulltorefresh.library.PullToRefreshListView
-import com.squareup.okhttp.Request
 import com.squareup.picasso.Picasso
 import groovy.transform.CompileStatic
 

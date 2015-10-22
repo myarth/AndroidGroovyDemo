@@ -11,14 +11,11 @@ import android.widget.AbsListView
 import com.arasthel.swissknife.SwissKnife
 import com.arasthel.swissknife.annotations.InjectView
 import com.myth.myarth.gradleapplication.R
-import com.myth.myarth.gradleapplication.http.HttpClient
-import com.myth.myarth.gradleapplication.http.HttpResponseHandler
 import com.myth.myarth.gradleapplication.ui.loadmore.LoadMoreListView
 import com.myth.myarth.gradleapplication.ui.quickadapter.BaseAdapterHelper
 import com.myth.myarth.gradleapplication.ui.quickadapter.QuickAdapter
 import com.myth.myarth.gradleapplication.utils.DeviceUtil
-import com.myth.myarth.gradleapplication.utils.UiUtil
-import com.squareup.okhttp.Request
+import com.myth.myarth.gradleapplication.ui.UiUtil
 import com.squareup.picasso.Picasso
 import groovy.transform.CompileStatic
 import in.srain.cube.views.ptr.PtrClassicFrameLayout
