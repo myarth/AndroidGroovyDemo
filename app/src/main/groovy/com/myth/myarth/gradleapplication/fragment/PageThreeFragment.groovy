@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.support.annotation.Nullable
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import com.arasthel.swissknife.dsl.components.GAsyncTask
+import com.myth.myarth.gradleapplication.R
+import com.myth.myarth.gradleapplication.utils.UiUtil
 import com.myth.myarth.pulltorefresh.library.PullToRefreshBase
 import com.myth.myarth.pulltorefresh.library.PullToRefreshListFragment
 import com.myth.myarth.pulltorefresh.library.PullToRefreshListView
@@ -33,7 +36,8 @@ class PageThreeFragment extends PullToRefreshListFragment {
         mPullRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
             @Override
             void onRefresh(PullToRefreshBase<ListView> refreshView) {
-                new GetDataTask().execute()
+//                new GetDataTask().execute()
+                getGAsyncTask().execute()
             }
         })
 
@@ -47,22 +51,33 @@ class PageThreeFragment extends PullToRefreshListFragment {
         setListShown(true)
     }
 
+    GAsyncTask getGAsyncTask() {
+        def gTask = new GAsyncTask({ param, gTask ->
+            mStrings
+        })
+        gTask.after {
+            mListItems.putAt(0, 'Added after refresh...' + new Random().nextInt(100))
+            mAdapter.notifyDataSetChanged()
+            mPullRefreshListView.onRefreshComplete()
+        }
+        gTask.error {
+            mPullRefreshListView.onRefreshComplete()
+            UiUtil.longToast(R.string.progress_load_error)
+        }
+        gTask
+    }
+
     class GetDataTask extends AsyncTask<Object, Void, List<String>> {
 
         @Override
         protected List<String> doInBackground(Object... params) {
-            try {
-                Thread.sleep(1000)
-            } catch (e) {
-            }
             mStrings
         }
 
         @Override
         void onPostExecute(List<String> result) {
-            mListItems.putAt(0, 'Added after refresh...')
+            mListItems.putAt(0, 'Added after refresh...' + new Random().nextInt(100))
             mAdapter.notifyDataSetChanged()
-            // Call onRefreshComplete when the list has been refreshed.
             mPullRefreshListView.onRefreshComplete()
             super.onPostExecute(result)
         }
