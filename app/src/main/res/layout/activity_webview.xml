@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/titleBar"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="45dp"-->
+        <!--android:background="@color/footer_text_color_selected"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/button_back"-->
+            <!--style="@style/WebViewTitleBarStyle"-->
+            <!--android:onClick="onBackwordUrlClick"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:src="@drawable/web_navibar_back" />-->
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/button_forword"-->
+            <!--style="@style/WebViewTitleBarStyle"-->
+            <!--android:onClick="onForwordUrlClick"-->
+            <!--android:scaleType="centerInside"-->
+            <!--android:src="@drawable/web_navibar_forword" />-->
+
+        <!--&lt;!&ndash; 占位使用 &ndash;&gt;-->
+        <!--<ImageButton-->
+            <!--android:id="@+id/button_placeholder1"-->
+            <!--style="@style/WebViewTitleBarStyle"-->
+            <!--android:visibility="invisible" />-->
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/button_placeholder2"-->
+            <!--style="@style/WebViewTitleBarStyle"-->
+            <!--android:visibility="invisible" />-->
+        <!--&lt;!&ndash; 占位使用 &ndash;&gt;-->
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/button_reload"-->
+            <!--style="@style/WebViewTitleBarStyle"-->
+            <!--android:onClick="onReloadUrlClick"-->
+            <!--android:src="@drawable/web_navibar_refresh" />-->
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/button_close"-->
+            <!--style="@style/WebViewTitleBarStyle"-->
+            <!--android:onClick="onCloseClick"-->
+            <!--android:src="@drawable/web_navibar_close" />-->
+    <!--</LinearLayout>-->
+
+    <include layout="@layout/main_header" android:id="@+id/titleBar"/>
+
+    <ProgressBar
+        android:layout_below="@+id/titleBar"
+        android:id="@+id/web_src_loadProgress"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:max="100"
+        android:progress="1"
+        android:progressDrawable="@drawable/webview_progress" />
+
+    <FrameLayout
+        android:id="@+id/layoutWebViewParent"
+        android:layout_below="@+id/titleBar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/white">
+
+        <!--
+        <include layout="@layout/layout_loading" android:id="@+id/webSrcLoadingView" />
+
+        <com.huayuan.ui.webview.CustomWebView
+            android:id="@+id/webView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+        -->
+
+    </FrameLayout>
+
+</RelativeLayout>

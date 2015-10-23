@@ -11,10 +11,10 @@ import com.arasthel.swissknife.annotations.InjectView
 import com.myth.myarth.gradleapplication.R
 import com.myth.myarth.gradleapplication.db.dao.ImUserDao
 import com.myth.myarth.gradleapplication.db.entity.ImUser
-import com.myth.myarth.gradleapplication.http.HttpResponseHandler
 import com.myth.myarth.gradleapplication.http.HttpClient
-import com.myth.myarth.gradleapplication.utils.SharedPreferencesUtil
+import com.myth.myarth.gradleapplication.http.HttpResponseHandler
 import com.myth.myarth.gradleapplication.ui.UiUtil
+import com.myth.myarth.gradleapplication.utils.SharedPreferencesUtil
 import com.squareup.okhttp.Request
 import groovy.transform.CompileStatic
 
@@ -49,8 +49,8 @@ class SimpleActivity extends BaseFragmentActivity {
         }
 
         button2.onClick {
-            def isFirstTimeUse = SharedPreferencesUtil.instance.getBoolean(SharedPreferencesUtil.FIRST_TIME_USE, true)
-            UiUtil.longToast(isFirstTimeUse as String)
+            def isFirstTimeUse = SharedPreferencesUtil.getBoolean(SharedPreferencesUtil.FIRST_TIME_USE, true)
+            UiUtil.toast(isFirstTimeUse as String, false)
 
             HttpClient.get('http://www.ikaili.com/', [:], new HttpResponseHandler() {
                 @Override
@@ -74,7 +74,7 @@ class SimpleActivity extends BaseFragmentActivity {
         def imUsers = imUserDao.queryForAll()
         if (imUsers) {
             def nick = imUsers[0].nick + ', extra=' + extraHi
-            isUpdate ? UiUtil.longToast(nick) : editText.setText(nick)
+            isUpdate ? UiUtil.toast(nick, false) : editText.setText(nick)
         }
     }
 

@@ -7,24 +7,28 @@ import groovy.transform.CompileStatic
 
 
 @CompileStatic
-@Singleton
 class SharedPreferencesUtil {
 
     private static final String SP_NAME = 'gradleapplication'
 
     static final String FIRST_TIME_USE = 'first-time-use'
+    static final String TOKEN = 'token'
 
-    SharedPreferences getSharedPreferences() {
+    static SharedPreferences getSharedPreferences() {
         AppContext.instance.getSharedPreferences(SP_NAME, Context.MODE_PRIVATE)
     }
 
-    boolean getBoolean(String key, boolean defValue) {
-        def value = sharedPreferences?.getBoolean(key, defValue)
+    static boolean getBoolean(String key, boolean defValue) {
+        def value = sharedPreferences.getBoolean(key, defValue)
         value != null ? value : defValue
     }
 
-    void putBoolean(String key, boolean value) {
-        sharedPreferences?.edit()?.putBoolean(key, value)?.apply()
+    static void putBoolean(String key, boolean value) {
+        sharedPreferences.edit()?.putBoolean(key, value)?.apply()
+    }
+
+    static String getString(String key, String defValue) {
+        sharedPreferences.getString(key, defValue)
     }
 
 }

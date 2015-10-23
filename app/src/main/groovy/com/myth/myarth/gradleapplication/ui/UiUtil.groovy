@@ -10,27 +10,21 @@ import groovy.transform.CompileStatic
 @CompileStatic
 class UiUtil {
 
-    static def shortToast(int resId, Context context = AppContext.instance) {
-        toast(resId, Toast.LENGTH_SHORT, context)
+    static def toast(int ResId, boolean isShort = true) {
+        toast(ResId, AppContext.instance, isShort)
     }
 
-    static def longToast(int resId, Context context = AppContext.instance) {
-        toast(resId, Toast.LENGTH_LONG, context)
+    static def toast(int ResId, Context context, boolean isShort = true) {
+        int duration = isShort ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG
+        Toast.makeText(context, ResId, duration).show()
     }
 
-    static def shortToast(String text, Context context = AppContext.instance) {
-        toast(text, Toast.LENGTH_SHORT, context)
+    static def toast(String text, boolean isShort = true) {
+        toast(text, AppContext.instance, isShort)
     }
 
-    static def longToast(String text, Context context = AppContext.instance) {
-        toast(text, Toast.LENGTH_LONG, context)
-    }
-
-    private static def toast(int resId, int duration, Context context) {
-        Toast.makeText(context, resId, duration).show()
-    }
-
-    private static def toast(String text, int duration, Context context) {
+    static def toast(String text, Context context, boolean isShort = true) {
+        int duration = isShort ? Toast.LENGTH_SHORT : Toast.LENGTH_LONG
         Toast.makeText(context, text, duration).show()
     }
 

@@ -41,7 +41,7 @@ class SplashActivity extends FragmentActivity {
         SwissKnife.inject(this)
 
         fadeIn = AnimationUtils.loadAnimation(this, R.anim.fadein)
-        def isFirstTimeUse = SharedPreferencesUtil.instance.getBoolean(SharedPreferencesUtil.FIRST_TIME_USE, true)
+        def isFirstTimeUse = SharedPreferencesUtil.getBoolean(SharedPreferencesUtil.FIRST_TIME_USE, true)
         if (isFirstTimeUse) {
             initGuideGallery()
         } else {
@@ -63,7 +63,7 @@ class SplashActivity extends FragmentActivity {
 
     @OnClick(R.id.btnHome)
     public void onClick() {
-        SharedPreferencesUtil.instance.putBoolean(SharedPreferencesUtil.FIRST_TIME_USE, false)
+        SharedPreferencesUtil.putBoolean(SharedPreferencesUtil.FIRST_TIME_USE, false)
         this.startActivity(MainActivity) {
             putExtra('extraHi', 'I got it.')
         }

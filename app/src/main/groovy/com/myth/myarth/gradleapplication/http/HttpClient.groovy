@@ -44,7 +44,7 @@ public class HttpClient {
     static
     def doRequest(String url, List<BasicNameValuePair> pairs, HttpResponseHandler responseHandler, String method = 'get') {
         if (!Utils.isNetworkConnected()) {
-            UiUtil.shortToast(R.string.no_network_connection_toast)
+            UiUtil.toast(R.string.no_network_connection_toast)
             return
         }
 

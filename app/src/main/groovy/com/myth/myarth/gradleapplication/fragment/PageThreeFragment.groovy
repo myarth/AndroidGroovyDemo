@@ -62,7 +62,7 @@ class PageThreeFragment extends PullToRefreshListFragment {
         }
         gTask.error {
             mPullRefreshListView.onRefreshComplete()
-            UiUtil.longToast(R.string.progress_load_error)
+            UiUtil.toast(R.string.progress_load_error)
         }
         gTask
     }
