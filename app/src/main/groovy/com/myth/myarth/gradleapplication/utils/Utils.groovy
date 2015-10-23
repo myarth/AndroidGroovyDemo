@@ -44,7 +44,7 @@ class Utils {
         (context?.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager)?.activeNetworkInfo
     }
 
-    static boolean isNetworkAvailable(Context context) {
+    static boolean isNetworkAvailable(Context context = AppContext.instance) {
         getActiveNetworkInfo(context)?.isAvailable() ?: false
     }
 
@@ -53,7 +53,7 @@ class Utils {
         (networkInfo?.isAvailable() && networkInfo?.isConnected()) ?: false
     }
 
-    static boolean isWifi(Context context) {
+    static boolean isWifi(Context context = AppContext.instance) {
         NetworkInfo networkInfo = getActiveNetworkInfo(context)
         (networkInfo?.isAvailable() && networkInfo?.isConnected() && networkInfo.type == ConnectivityManager.TYPE_WIFI) ?: false
     }

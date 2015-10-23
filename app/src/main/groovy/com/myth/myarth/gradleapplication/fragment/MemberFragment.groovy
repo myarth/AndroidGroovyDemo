@@ -10,8 +10,9 @@ import android.view.ViewGroup
 import com.arasthel.swissknife.SwissKnife
 import com.arasthel.swissknife.annotations.InjectView
 import com.myth.myarth.gradleapplication.R
-import com.myth.myarth.gradleapplication.ui.pulltozoomview.PullToZoomScrollViewEx
+import com.myth.myarth.gradleapplication.activity.SimpleActivity
 import com.myth.myarth.gradleapplication.ui.UiUtil
+import com.myth.myarth.gradleapplication.ui.pulltozoomview.PullToZoomScrollViewEx
 import groovy.transform.CompileStatic
 
 @CompileStatic
@@ -49,7 +50,7 @@ class MemberFragment extends Fragment {
             UiUtil.showLogin(activity)
         }
         headView.findViewById(R.id.tv_register)?.onClick {
-            UiUtil.showLogin(activity)
+            activity.startActivity(SimpleActivity)
         }
 
         def pullRootView = scrollView.pullRootView
