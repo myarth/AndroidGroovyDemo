@@ -54,12 +54,13 @@ class BasicWebView extends WebView implements Serializable {
             javaScriptEnabled = true
             loadsImagesAutomatically = true
             useWideViewPort = true
-            loadWithOverviewMode = true
+            loadWithOverviewMode = false
             saveFormData = true
             savePassword = false
             defaultZoom = WebSettings.ZoomDensity.MEDIUM
             supportZoom = false
-            supportMultipleWindows = false
+            builtInZoomControls = false
+            supportMultipleWindows = true
             longClickable = true
             scrollbarFadingEnabled = true
             scrollBarStyle = SCROLLBARS_INSIDE_OVERLAY
