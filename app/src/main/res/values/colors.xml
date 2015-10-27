@@ -33,4 +33,19 @@
     <color name="footer_text_color_normal">#343434</color>
     <color name="footer_text_color_selected">#FF601C</color>
 
+    <color name="color_text_grey">#49596b</color>
+    <color name="futures_green">#ff40ab5e</color>
+    <color name="futures_red">#d13939</color>
+    <color name="color_login">#292c35</color>
+    <color name="color_white">#ffffff</color>
+    <color name="color_yellow">#fece00</color>
+    <color name="color_grey">#919aac</color>
+    <color name="color_blue">#04d6fc</color>
+    <color name="color_black">#20242b</color>
+    <color name="color_text_value_grey">#8e9aab</color>
+    <color name="color_cell_grey">#d7dbe2</color>
+    <color name="color_yubibao_asset_bg">#e6eaf0</color>
+    <color name="color_red1">#ef3f2f</color>
+    <color name="color_red">#d13a38</color>
+
 </resources>

@@ -52,6 +52,18 @@
         <activity
             android:name=".activity.SimpleActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.WebViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.VideoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SimpleDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ImageGalleryActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 
