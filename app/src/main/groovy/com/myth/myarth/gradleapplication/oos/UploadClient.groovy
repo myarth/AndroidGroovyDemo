@@ -19,6 +19,7 @@ class UploadClient {
     static final String ENDPOINT = 'oss-cn-beijing.aliyuncs.com'
     static final String BUCKET_NAME = 'bucketName'
     static final String OSS_PATH = 'http://bucketName.oss-cn-beijing.aliyuncs.com'
+    static final String DEFAULT_CONTENT_TYPE = 'image/jpeg'
 
     static OSSService ossService
     static OSSBucket bucket
@@ -51,13 +52,13 @@ class UploadClient {
         bucket = ossService.getOssBucket(BUCKET_NAME)
     }
 
-    static void asyncUpload(File file, MessageHandler handler, String contentType = 'image/jpeg') throws FileNotFoundException {
+    static void asyncUpload(File file, MessageHandler handler, String contentType = DEFAULT_CONTENT_TYPE) throws FileNotFoundException {
         def inputStream = new FileInputStream(file)
         asyncUpload(file.name, inputStream, file.length() as int, handler, contentType)
     }
 
     static void asyncUpload(String filename, InputStream inputStream, int inputLength,
-                            MessageHandler handler, String contentType = 'image/jpeg') {
+                            MessageHandler handler, String contentType = DEFAULT_CONTENT_TYPE) {
         def data = ossService.getOssData(bucket, filename)
         data.setInputstream(inputStream, inputLength, contentType)
         data.uploadInBackground(new SaveCallback() {

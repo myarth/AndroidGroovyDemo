@@ -24,8 +24,15 @@ class ImageGalleryActivity extends SwipeBackActivity {
     ViewPager viewer
     @Extra
     int position
+    /*
+       com.arasthel.swissknife.utils.AnnotationUtils.processArray
+       对数组类型的字段进行了赋值
+       com.arasthel.swissknife.utils.AnnotationUtils.processCommonVariable
+       对基本数据类型、Parcelable、Serializable、ArrayList 进行了赋值
+       notice：此处不能使用 List 来注入参数值，因为该方法检查的是 ArrayList 类型
+     */
     @Extra
-    List<String> images
+    ArrayList<String> images
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
