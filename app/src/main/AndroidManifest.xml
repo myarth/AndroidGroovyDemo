@@ -36,8 +36,6 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="com.myth.myarth.gradleapplication.activity.SplashActivity" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -54,6 +52,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.WebViewActivity"
+            android:launchMode="singleTop"
+            android:process=":remote"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.VideoActivity"

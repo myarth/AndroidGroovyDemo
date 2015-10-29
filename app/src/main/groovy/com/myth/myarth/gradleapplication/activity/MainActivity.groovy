@@ -23,7 +23,8 @@ class MainActivity extends BaseFragmentActivity {
     Fragment memberFragment = new MemberFragment()
     List<Fragment> fragmentList = [homePagerFragment, swissKnifeFragment1, swissKnifeFragment2, memberFragment]
 
-    FragmentManager fManager
+    @Lazy
+    FragmentManager fManager = supportFragmentManager
     int currSel = 0 // listener 创建了 MainActivity$1 的类，此处不能使用 static 修饰符（groovy closure 可以使用）
 
     @InjectView
@@ -34,7 +35,6 @@ class MainActivity extends BaseFragmentActivity {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         SwissKnife.inject(this)
-        fManager = supportFragmentManager
         initFootBar()
     }
 

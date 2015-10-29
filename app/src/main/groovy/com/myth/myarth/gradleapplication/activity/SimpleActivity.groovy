@@ -8,6 +8,7 @@ import android.widget.EditText
 import com.arasthel.swissknife.SwissKnife
 import com.arasthel.swissknife.annotations.Extra
 import com.arasthel.swissknife.annotations.InjectView
+import com.arasthel.swissknife.annotations.OnUIThread
 import com.myth.myarth.gradleapplication.R
 import com.myth.myarth.gradleapplication.db.dao.ImUserDao
 import com.myth.myarth.gradleapplication.db.entity.ImUser
@@ -49,20 +50,22 @@ class SimpleActivity extends BaseFragmentActivity {
         }
 
         button2.onClick {
-            def isFirstTimeUse = SharedPreferencesUtil.getBoolean(SharedPreferencesUtil.FIRST_TIME_USE, true)
-            UiUtil.toast(isFirstTimeUse as String, false)
+//            def isFirstTimeUse = SharedPreferencesUtil.getBoolean(SharedPreferencesUtil.FIRST_TIME_USE, true)
+//            UiUtil.toast(isFirstTimeUse as String, false)
 
-            HttpClient.get('http://www.ikaili.com/', [:], new HttpResponseHandler() {
-                @Override
-                public void onSuccess(String body) {
-                    println body
-                }
+            doOnUIThread()
 
-                @Override
-                public void onFailure(Request request, IOException e) {
-                    println e.message
-                }
-            })
+//            HttpClient.get('http://www.ikaili.com/', [:], new HttpResponseHandler() {
+//                @Override
+//                public void onSuccess(String body) {
+//                    println body
+//                }
+//
+//                @Override
+//                public void onFailure(Request request, IOException e) {
+//                    println e.message
+//                }
+//            })
         }
 
         imUserDao = new ImUserDao(this)
@@ -76,6 +79,11 @@ class SimpleActivity extends BaseFragmentActivity {
             def nick = imUsers[0].nick + ', extra=' + extraHi
             isUpdate ? UiUtil.toast(nick, false) : editText.setText(nick)
         }
+    }
+
+    @OnUIThread
+    public void doOnUIThread() {
+        UiUtil.toast('uiHandler invoke.')
     }
 
     @Override
