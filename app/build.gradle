@@ -125,6 +125,7 @@ dependencies {
 //            'com.nostra13.universalimageloader:universal-image-loader:1.9.4',
 //            'com.jiechic.library:xUtils:2.6.14',
 //            'com.umeng:analytics:5.4.1',
+//            'com.mcxiaoke.gradle:packer:1.0.4',
     )
     compile('com.bigkoo:alertview:1.0.0') {
         exclude module: 'appcompat-v7'

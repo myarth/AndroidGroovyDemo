@@ -50,7 +50,6 @@ class WebViewActivity extends FragmentActivity implements ProgressBarHelper.Prog
         SwissKnife.inject(this)
         SwissKnife.loadExtras(this)
 
-
         setConfigCallback(applicationContext.getSystemService(WINDOW_SERVICE) as WindowManager)
         initView()
         loadWebViewUrl()

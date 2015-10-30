@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.widget.Toast
 import com.myth.myarth.gradleapplication.common.AppContext
+import com.myth.myarth.gradleapplication.ui.UiUtil
 import groovy.transform.CompileStatic
 
 
@@ -86,7 +87,7 @@ class Utils {
     static boolean checkSdcard(Context context) {
         def exitsSdcard = isExitsSdcard()
         if (!exitsSdcard) {
-            Toast.makeText(context, '请插入手机存储卡再使用本功能', Toast.LENGTH_SHORT).show()
+            UiUtil.toast('请插入手机存储卡再使用本功能', context)
         }
         exitsSdcard
     }

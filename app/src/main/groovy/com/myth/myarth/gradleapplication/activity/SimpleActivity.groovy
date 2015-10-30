@@ -1,5 +1,6 @@
 package com.myth.myarth.gradleapplication.activity
 
+import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -10,6 +11,7 @@ import com.arasthel.swissknife.annotations.Extra
 import com.arasthel.swissknife.annotations.InjectView
 import com.arasthel.swissknife.annotations.OnUIThread
 import com.myth.myarth.gradleapplication.R
+import com.myth.myarth.gradleapplication.common.AppContext
 import com.myth.myarth.gradleapplication.db.dao.ImUserDao
 import com.myth.myarth.gradleapplication.db.entity.ImUser
 import com.myth.myarth.gradleapplication.http.HttpClient
@@ -41,12 +43,14 @@ class SimpleActivity extends BaseFragmentActivity {
         SwissKnife.loadExtras(this)
 
         button.onClick {
-            def text = editText.text.toString()
-            imUserDao.createOrUpdate(new ImUser(
-                    username: 'gradle',
-                    nick: text
-            ))
-            showNick(true)
+//            def text = editText.text.toString()
+//            imUserDao.createOrUpdate(new ImUser(
+//                    username: 'gradle',
+//                    nick: text
+//            ))
+//            showNick(true)
+            UiUtil.toast(AppContext.instance.packageName)
+
         }
 
         button2.onClick {
@@ -83,7 +87,8 @@ class SimpleActivity extends BaseFragmentActivity {
 
     @OnUIThread
     public void doOnUIThread() {
-        UiUtil.toast('uiHandler invoke.')
+//        UiUtil.toast('uiHandler invoke.')
+        UiUtil.toast(AppContext.instance.filesDir.path)
     }
 
     @Override
